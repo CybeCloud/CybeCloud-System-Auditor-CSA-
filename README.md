@@ -8,8 +8,8 @@ SAT provides a non-destructive, read-only audit of Windows systems. It collects 
 
 This script is designed strictly for authorized use in environments where you have explicit permission to audit.
 
-Features
-1. System Information
+**Features**
+**1. System Information**
 
 Collects OS name, version, manufacturer, and domain details.
 
@@ -17,7 +17,7 @@ Displays hardware model and recent boot time.
 
 Retrieves and lists the most recent installed hotfixes/patches.
 
-2. User Context and Privileges
+**2. User Context and Privileges**
 
 Displays the current user context with associated privileges.
 
@@ -25,7 +25,7 @@ Enumerates members of the local Administrators group.
 
 Helps identify accounts with elevated or unexpected privileges.
 
-3. Service Analysis
+**3. Service Analysis**
 
 Detects unquoted service paths vulnerable to path injection.
 
@@ -33,7 +33,7 @@ Examines service binaries for weak file system permissions that may be abused fo
 
 Displays results in a clear, tabular format.
 
-4. Scheduled Task Discovery
+**4. Scheduled Task Discovery**
 
 Enumerates active scheduled tasks.
 
@@ -41,7 +41,7 @@ Filters out Microsoft defaults to highlight custom or third-party tasks.
 
 Useful for detecting persistence mechanisms.
 
-5. Network Configuration
+**5. Network Configuration**
 
 Displays active network interfaces, IP addresses, and gateways.
 
@@ -51,7 +51,7 @@ Extracts Wi-Fi profiles and shows stored keys (if accessible).
 
 Provides a quick overview of network exposure and saved credentials.
 
-6. Security Settings
+**6. Security Settings**
 
 Verifies User Account Control (UAC) status.
 
@@ -59,7 +59,7 @@ Checks Local Security Authority (LSA) protection status.
 
 Queries Windows Defender / Security Center status, including AV and real-time protection.
 
-7. Installed Software Inventory
+**7. Installed Software Inventory**
 
 Enumerates installed applications from registry locations.
 
@@ -67,7 +67,7 @@ Excludes Microsoft/Windows entries to focus on third-party software.
 
 Displays software name, version, and publisher.
 
-8. Sensitive File Search
+**8. Sensitive File Search**
 
 Recursively searches common directories (ProgramData, AppData, Documents, root of C:\) for sensitive file patterns.
 
@@ -77,28 +77,28 @@ Outputs up to 5 matches per pattern per location.
 
 Intended as a heuristic discovery aid (false positives possible).
 
-Execution Modes
+**Execution Modes**
 
-Full Audit
-Runs all modules.
+**Full Audit**
+**Runs all modules.**
 
 Start-SystemAudit
 
 
-Quick Audit
-Runs only core checks (System + User).
+**Quick Audit**
+R**uns only core checks (System + User).**
 
 Start-SystemAudit -Quick
 
 
-Stealth Mode
-Suppresses banner and introduces random delays.
+**Stealth Mode**
+**Suppresses banner and introduces random delays.**
 
 Start-SystemAudit -Stealth
 
 Output
 
-Audit results are printed in grouped sections for easy interpretation:
+**Audit results are printed in grouped sections for easy interpretation:**
 
 === SYSTEM INFORMATION ===  
 === USER CONTEXT ===  
@@ -127,17 +127,17 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 Security Considerations
 
-Read-only: The script does not modify system state.
+**Read-only: The script does not modify system state.**
 
-Privileges: Some checks require administrative rights. Without elevation, results may be incomplete.
+**Privileges:** Some checks require administrative rights. Without elevation, results may be incomplete.
 
-Sensitive Data: Output may expose passwords, Wi-Fi keys, or sensitive file paths. Treat results as confidential.
+**Sensitive Data:** Output may expose passwords, Wi-Fi keys, or sensitive file paths. Treat results as confidential.
 
-False Positives: Sensitive file search uses broad patterns; validation is required.
+**False Positives:** Sensitive file search uses broad patterns; validation is required.
 
 Intended Use & Legal Notice
 
-This toolkit is intended for:
+**This toolkit is intended for:**
 
 System administration and configuration hygiene.
 
@@ -149,7 +149,7 @@ Do not run this script on systems without explicit authorization. Unauthorized u
 
 Contribution & Roadmap
 
-Future development goals include:
+**Future development goals include:**
 
 JSON/CSV export options.
 
@@ -161,12 +161,12 @@ Broader heuristics for sensitive data detection.
 
 Contributions are welcome. Feature requests, bug reports, and pull requests should be submitted via the project repository.
 
-Summary
+**Summary**
 
-CybeCloud SAT delivers a comprehensive Windows auditing capability in a single PowerShell script. It is lightweight, non-intrusive, and effective for quickly surfacing security gaps and misconfigurations.
+CybeCloud Auditkit v1.0 delivers a comprehensive Windows auditing capability in a single PowerShell script. It is lightweight, non-intrusive, and effective for quickly surfacing security gaps and misconfigurations.
 
 Network and Wi-Fi profile queries may expose secrets if run on shared machines — treat outputs as sensitive.
 
 Contribution & roadmap
 
-Contributions welcome: add modular checks, export options (JSON/CSV), improved permission parsing, or granular reporting. Open issues for specific feature requests or bug reports.
+**Contributions welcome:** add modular checks, export options (JSON/CSV), improved permission parsing, or granular reporting. Open issues for specific feature requests or bug reports.
