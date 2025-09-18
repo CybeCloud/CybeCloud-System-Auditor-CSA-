@@ -9,6 +9,7 @@ SAT provides a non-destructive, read-only audit of Windows systems. It collects 
 This script is designed strictly for authorized use in environments where you have explicit permission to audit.
 
 **Features**
+
 **1. System Information**
 
 Collects OS name, version, manufacturer, and domain details.
@@ -86,7 +87,7 @@ Start-SystemAudit
 
 
 **Quick Audit**
-R**uns only core checks (System + User).**
+**Runs only core checks (System + User).**
 
 Start-SystemAudit -Quick
 
@@ -110,22 +111,22 @@ Output
 === SENSITIVE FILE SEARCH ===  
 
 
-Each section is formatted as tables or structured text. Output can be redirected to a file for later review:
+**Each section is formatted as tables or structured text. Output can be redirected to a file for later review:**
 
 Start-SystemAudit | Out-File audit-results.txt
 
-Installation
+**Installation**
 
 Save the script as AuditKit.ps1.
 
 Launch PowerShell with elevated privileges (recommended).
 
-Allow script execution in the current session:
+**Allow script execution in the current session:**
 
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\AuditKit.ps1
 
-Security Considerations
+**Security Considerations**
 
 **Read-only: The script does not modify system state.**
 
@@ -135,7 +136,7 @@ Security Considerations
 
 **False Positives:** Sensitive file search uses broad patterns; validation is required.
 
-Intended Use & Legal Notice
+**Intended Use & Legal Notice**
 
 **This toolkit is intended for:**
 
